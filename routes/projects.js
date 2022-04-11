@@ -23,7 +23,8 @@ module.exports = express
       }
     }`).then((data) => {
       res.render('projects', {
-        // projects: data.user.repositories.edges,
+        projects: data.repository.forks.edges,
       })
+      console.log(data.repository.forks.edges);
     })
   })
