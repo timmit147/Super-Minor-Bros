@@ -143,7 +143,7 @@ let int1;
 const pipeHandler = (event) => {
     clearInterval(int1);
 
-    document.getElementById("headerInfo").style.display = "none";
+    // document.getElementById("headerInfo").style.display = "none";
 
     // clear old
     !currentPipe || currentPipe.classList.remove("active");
@@ -194,16 +194,23 @@ const pipeHandler = (event) => {
     currentPipe = event.currentTarget;
 };
 
-// setup timeline
-timeline.forEach((event, index) => {
-    const e = document.createElement("div");
-    e.classList.add("event");
-    e.dataset.index = index;
-    e.dataset.title = event.title;
-    e.dataset.month = event.month_name;
-    usersContainer.appendChild(e);
-    e.addEventListener("click", pipeHandler.bind(this));
-});
+
+// // setup timeline
+// gitUsers    .forEach((event, index) => {
+//     const e = document.createElement("div");
+//     e.classList.add("event");
+//     // e.gitUsers.index = index;
+//     // e.gitUsers.title = event.title;
+//     e.gitUsers.month = gitUsers[e].node.owner.login;
+//     usersContainer.appendChild(e);
+//     e.addEventListener("click", pipeHandler.bind(this));
+// });
+
+// console.log(gitUsers);
+// for (key of gitUsers) {
+//     console.log(gitUsers[key]);
+//     // console.log(gitUsers[key].node.owner.login);
+//   }
 
 /**
  * Audio handling
