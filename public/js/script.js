@@ -67,7 +67,7 @@ const pipeHandler = (event) => {
 // // setup timeline
 gitUsers.forEach((event, index) => {
     const e = document.createElement("div");
-    e.classList.add("event");
+    e.classList.add("pipe");
     e.dataset.index = index;
     e.dataset.title = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
     e.dataset.month = gitUsers[index].node.owner.login;
