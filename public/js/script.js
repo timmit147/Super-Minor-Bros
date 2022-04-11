@@ -64,13 +64,13 @@ const pipeHandler = (event) => {
 };
 
 
-// // setup timeline
+// // setup all the pipes with gitUsers 
 gitUsers.forEach((event, index) => {
     const e = document.createElement("div");
     e.classList.add("pipe");
     e.dataset.index = index;
-    e.dataset.title = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
-    e.dataset.month = gitUsers[index].node.owner.login;
+    e.dataset.repocount = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
+    e.dataset.usernames = gitUsers[index].node.owner.login;
     usersContainer.appendChild(e);
     e.addEventListener("click", pipeHandler.bind(this));
 });
@@ -82,7 +82,7 @@ gitUsers.forEach((event, index) => {
 //   }
 
 /**
- * Audio handling
+ * sound effects
  */
 const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
 const buffers = {};

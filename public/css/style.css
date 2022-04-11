@@ -136,7 +136,7 @@ h1 {
 
 .pipe::before {
   color: #e52521;
-  content: attr(data-month);
+  content: attr(data-usernames);
   font-size: .9em;
   font-weight: bold;
   left: 50%;
@@ -150,7 +150,7 @@ h1 {
   background-color: #de5918;
   box-shadow: -2px 0 #f7d8c7, 0 -2px #f7d8c7, 0 2px black, 2px 0 black;
   color: #f7d8c7;
-  content: attr(data-title);
+  content: attr(data-repocount);
   font-size: 1em;
   left: 50%;
   line-height: 1.125em;
