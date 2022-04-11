@@ -1,15 +1,18 @@
 <%- include('./partials/head') %>
 
-<section>
-  <h2>Hi 🖖,</h2>
-  <p>You have reached the website of Justus Sturkenboom, Philosophy/ Computer
-  Science Lecturer at the #auas in the #cmda bachelor programme. Co-creator of
-  the new #fdnd associate degree programme... and i do some sketchnoting for
-  fun ^^</p>
-</section>
+  <div class="container">
+    <div class="stage">
+      <header>
+        <h1>Super Minor Bros</h1>
+        <h2>Learn more about these super bros </h2>
+        <p id="headerInfo" class="headerInfo">(click the pipes!)</p>
+      </header>
+      <ul id="users"></ul>
+      <div id="mario" class="mario idle"></div>
+    </div>
+    <div id="ground" class="ground">
+      <div id="grass" class="grass"></div>
+    </div>
+  </div>
 
-<section>
-  <!-- Placeholder for other things -->
-</section>
-
-<%- include('./partials/foot') %>
+  <%- include('./partials/foot') %>
