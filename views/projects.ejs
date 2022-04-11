@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+
+  <section>
+    <h2>Here 👉,</h2>
+    <p>Are some of the projects i did at GitHub over the past years. Most of these are examples created during teaching sessions to demonstrate specific things...</p>
+  </section>
+  
+  <section>
+<% projects.forEach(project => { %>
+    <article>
+      <h2><%= project.node.name %></h2>
+      <p><%= project.node.description %></p>
+      <% if (project.node.homepageUrl !== null) { %>
+      <a class="live" href="<%= project.node.homepageUrl %>" alt="Watch <%= project.node.name %> in action"><span>Watch in action</span></a>
+      <% } %>
+      <a class="github" href="<%= project.node.url %>" alt="Watch <%= project.node.name %> on GitHub"><span>Browse on GitHub</span></a>
+    </article>
+
+<% }) %>
+  </section>
+
+<%- include('./partials/foot') %>
