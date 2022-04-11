@@ -196,15 +196,15 @@ const pipeHandler = (event) => {
 
 
 // // setup timeline
-// gitUsers    .forEach((event, index) => {
-//     const e = document.createElement("div");
-//     e.classList.add("event");
-//     // e.gitUsers.index = index;
-//     // e.gitUsers.title = event.title;
-//     e.gitUsers.month = gitUsers[e].node.owner.login;
-//     usersContainer.appendChild(e);
-//     e.addEventListener("click", pipeHandler.bind(this));
-// });
+gitUsers.forEach((event, index) => {
+    const e = document.createElement("div");
+    e.classList.add("event");
+    e.dataset.index = index;
+    e.dataset.title =  "Repositories:" + gitUsers[index].node.owner.repositories.totalCount ;
+    e.dataset.month = gitUsers[index].node.owner.login;
+    usersContainer.appendChild(e);
+    e.addEventListener("click", pipeHandler.bind(this));
+});
 
 // console.log(gitUsers);
 // for (key of gitUsers) {
