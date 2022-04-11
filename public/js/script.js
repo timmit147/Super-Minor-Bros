@@ -1,135 +1,4 @@
 // data
-const timeline = [
-    {
-        year: 1985,
-        month: 9,
-        month_name: "September 1985",
-        title: "Super Mario Brothers"
-    },
-    {
-        year: 1986,
-        month: 6,
-        month_name: "June 1986",
-        title: "Super Mario Bros: The Lost Levels"
-    },
-    {
-        year: 1988,
-        month: 10,
-        month_name: "October 1988",
-        title: "Super Mario Bros. 2"
-    },
-    {
-        year: 1988,
-        month: 10,
-        month_name: "October 1988",
-        title: "Super Mario Bros. 3"
-    },
-    { year: 1989, month: 4, month_name: "April 1989", title: "Super Mario Land" },
-    {
-        year: 1990,
-        month: 11,
-        month_name: "November 1990",
-        title: "Super Mario World"
-    },
-    {
-        year: 1992,
-        month: 10,
-        month_name: "October 1992",
-        title: "Super Mario Land: 6 Golden Coins"
-    },
-    {
-        year: 1995,
-        month: 8,
-        month_name: "August 1995",
-        title: "Super Mario World 2: Yoshi's Island"
-    },
-    { year: 1996, month: 6, month_name: "June 1996", title: "Super Mario 64" },
-    {
-        year: 2002,
-        month: 7,
-        month_name: "July 2002",
-        title: "Super Mario Sunshine"
-    },
-    {
-        year: 2006,
-        month: 5,
-        month_name: "May 2006",
-        title: "New Super Mario Bros."
-    },
-    {
-        year: 2007,
-        month: 11,
-        month_name: "November 2007",
-        title: "Super Mario Galaxy"
-    },
-    {
-        year: 2009,
-        month: 11,
-        month_name: "November 2009",
-        title: "New Super Mario Bros. Wii"
-    },
-    {
-        year: 2010,
-        month: 5,
-        month_name: "May 2010",
-        title: "Super Mario Galaxy 2"
-    },
-    {
-        year: 2011,
-        month: 11,
-        month_name: "November 2011",
-        title: "Super Mario 3D Land"
-    },
-    {
-        year: 2012,
-        month: 7,
-        month_name: "July 2012",
-        title: "New Super Mario Bros 2"
-    },
-    {
-        year: 2012,
-        month: 11,
-        month_name: "November 2012",
-        title: "New Super Mario Bros. U"
-    },
-    {
-        year: 2013,
-        month: 11,
-        month_name: "November 2013",
-        title: "Super Mario 3D World"
-    },
-    {
-        year: 2015,
-        month: 9,
-        month_name: "September 2015",
-        title: "Super Mario Maker"
-    },
-    {
-        year: 2016,
-        month: 12,
-        month_name: "December 2016",
-        title: "Super Mario Run"
-    },
-    {
-        year: 2017,
-        month: 10,
-        month_name: "October 2017",
-        title: "Super Mario Odyssey"
-    },
-    {
-        year: 2019,
-        month: 6,
-        month_name: "June 2019",
-        title: "Super Mario Maker 2"
-    },
-    {
-        year: 2021,
-        month: 2,
-        month_name: "February 2021",
-        title: "Super Mario 3D World + Bowser's Fury"
-    }
-];
-
 //
 const mario = document.getElementById("mario");
 const ground = document.getElementById("ground");
@@ -155,7 +24,7 @@ const pipeHandler = (event) => {
     const xpos = -100 - index * 150 - 25;
     const curXpos = -100 - currentIndex * 150 - 25;
     const distance = curXpos - xpos;
-    const duration = Math.abs(distance) * 3;
+    const duration = Math.abs(distance) * 2;
     // console.log(distance);
     usersContainer.style.transitionDuration = `${duration}ms`;
     usersContainer.style.transform = `translateX(${xpos}px)`;
@@ -164,8 +33,8 @@ const pipeHandler = (event) => {
     grass.style.transitionDuration = `${duration}ms`;
     grass.style.backgroundPosition = `${xpos}px 0`;
 
-    //
-    playSfx("jump");
+    // //
+    // playSfx("jump");
 
     // walk style
     const dir = distance < 0 ? "left" : "right";
@@ -182,7 +51,7 @@ const pipeHandler = (event) => {
             mario.classList.remove(`walk-${dir}`);
             mario.classList.add(`search-${dir}`);
             target.classList.add("active");
-            playSfx("pipe");
+            playSfx("repoVine");
         },
         duration,
         dir,
@@ -200,7 +69,7 @@ gitUsers.forEach((event, index) => {
     const e = document.createElement("div");
     e.classList.add("event");
     e.dataset.index = index;
-    e.dataset.title =  "Repositories:" + gitUsers[index].node.owner.repositories.totalCount ;
+    e.dataset.title = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
     e.dataset.month = gitUsers[index].node.owner.login;
     usersContainer.appendChild(e);
     e.addEventListener("click", pipeHandler.bind(this));
@@ -257,7 +126,8 @@ const loadBuffers = (urls, ids) => {
 loadBuffers(
     [
         "https://assets.codepen.io/439000/jump.mp3",
+        "https://storage.cloudconvert.com/tasks/eaf1a154-620c-4057-969e-8478ba622e49/repoPopup.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1649785742&Signature=dHTA4y53Ptoxxg%2BfMN3C5ApvNNQ%3D&response-content-disposition=inline%3B%20filename%3D%22repoPopup.mp3%22&response-content-type=audio%2Fmpeg",
         "https://assets.codepen.io/439000/smb_pipe.mp3"
     ],
-    ["jump", "pipe"]
+    ["jump", "repoVine", "downInPipe"]
 );
