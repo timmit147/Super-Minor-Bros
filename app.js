@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 const express = require('express')
 const indexRoute = require('./routes/index')
@@ -13,4 +12,3 @@ module.exports = express()
   .use('/', indexRoute)
   .use('/projects', projectsRoute)
 // .use(errorRoute)
-

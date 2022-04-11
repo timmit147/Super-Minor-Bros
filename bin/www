@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+const app = require('../app').set('port', process.env.PORT || 7000)
+
+let server = app.listen(app.get('port'), () => {
+  console.log('API listening on localhost:' + server.address().port)
+})
