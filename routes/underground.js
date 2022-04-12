@@ -10,26 +10,24 @@ module.exports = express
   .get('/:id', function (req, res) {
     // Get the repository information from my GitHub account
     graphqlAuth(`{
-      repository(name: "web-app-from-scratch-2122", owner: "cmda-minor-web") {
+      viewer {
+        login
+      }
+      repositoryOwner(login: "${req.params.id}") {
         id
-        forks(first: 100) {
+        repositories(first: 10) {
           edges {
             node {
               id
-              owner {
-                login
-                repositories {
-                  totalCount
-                }
-              }
+              name
             }
           }
         }
       }
     }`).then((data) => {
-      console.log(req.params);
+      console.log(data.repositoryOwner.repositories.edges[0].node.name);
       res.render('underground', {
-        users: data.repository.forks.edges,
+        repositories: data.repositoryOwner.repositories.edges,
         name: req.params.id,
       })
     })
