@@ -7,7 +7,7 @@ const graphqlAuth = graphql.defaults({
 module.exports = express
   .Router()
 
-  .get('/', function (req, res) {
+  .get('/:id', function (req, res) {
     // Get the repository information from my GitHub account
     graphqlAuth(`{
       repository(name: "web-app-from-scratch-2122", owner: "cmda-minor-web") {
@@ -27,8 +27,10 @@ module.exports = express
         }
       }
     }`).then((data) => {
+      console.log(req.params);
       res.render('underground', {
         users: data.repository.forks.edges,
+        name: req.params.id,
       })
     })
   })

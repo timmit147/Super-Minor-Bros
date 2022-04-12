@@ -70,7 +70,7 @@ gitUsers.forEach((event, index) => {
     const l = document.createElement("a");
     e.classList.add("pipe");
     l.text = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
-    l.href = "/underground"
+    l.href = "/underground/"+gitUsers[index].node.owner.login
     e.dataset.index = index;
     e.dataset.repocount = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
     e.dataset.usernames = gitUsers[index].node.owner.login;
