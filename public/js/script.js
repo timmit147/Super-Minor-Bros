@@ -135,3 +135,35 @@ loadBuffers(
     ],
     ["jump", "repoVine", "downInPipe"]
 );
+// Left
+  document.addEventListener("keydown", event => {
+    if (event.code === "ArrowLeft") {
+        mario.classList.add('walk-left')
+      console.log('key addvent: left')
+    } 
+  });
+  document.addEventListener("keyup", event => {
+    if (event.code === "ArrowLeft") {
+        mario.classList.remove('walk-left')
+      console.log('key addvent: left')
+    } 
+  });
+// Right
+  document.addEventListener("keydown", event => {
+    if (event.code === "ArrowRight") {
+        mario.classList.add('walk-right')
+        console.log('key addvent: right')
+      } 
+    });
+    document.addEventListener("keyup", event => {
+        if (event.code === "ArrowRight") {
+            mario.classList.remove('walk-right')
+            console.log('key addvent: right')
+          } 
+        });
+// 
+  document.addEventListener("keydown", event => {
+    if (event.code === "Space") {
+      console.log('key addvent: space')
+    } 
+  });

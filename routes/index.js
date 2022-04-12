@@ -30,7 +30,7 @@ module.exports = express
       res.render('index', {
         users: data.repository.forks.edges,
       })
-      
+
     })
   })
  
