@@ -27,7 +27,6 @@ module.exports = express
         }
       }
     }`).then((data) => {
-      console.log(data.repository.forks.edges);
       res.render('index', {
         users: data.repository.forks.edges,
       })

@@ -67,10 +67,14 @@ const pipeHandler = (event) => {
 // // setup all the pipes with gitUsers 
 gitUsers.forEach((event, index) => {
     const e = document.createElement("div");
+    const l = document.createElement("a");
     e.classList.add("pipe");
+    l.text = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
+    l.href = "/underground"
     e.dataset.index = index;
     e.dataset.repocount = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
     e.dataset.usernames = gitUsers[index].node.owner.login;
+    e.appendChild(l);
     usersContainer.appendChild(e);
     e.addEventListener("click", pipeHandler.bind(this));
 });

@@ -163,7 +163,7 @@ h1 {
 }
 
 .pipe.active::after {
-  display: block;
+  display: none;
   transform: translate(-50%, calc(-100% - 3.125em)) scale(1);
   transition: transform 200ms steps(6, end);
 }
@@ -322,3 +322,24 @@ h1 {
 @keyframes jump {
   
 } */
+
+.active a{
+  display: flex;
+}
+
+a {
+  display: none;
+  position: absolute;
+  bottom: 90px;
+  left: -50px;
+  display: none;
+  align-items: center;
+  font-family: "Press Start 2P", sans-serif;
+  background-color: #de5918;
+  box-shadow: -2px 0 #f7d8c7, 0 -2px #f7d8c7, 0 2px black, 2px 0 black;
+  color: #f7d8c7;
+  font-size: 1em;
+  line-height: 1.125em;
+  padding: 0.625em;
+  transition: transform 200ms ease-out;
+}
