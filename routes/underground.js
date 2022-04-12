@@ -15,11 +15,12 @@ module.exports = express
       }
       repositoryOwner(login: "${req.params.id}") {
         id
-        repositories(first: 10) {
+        repositories(first: 100) {
           edges {
             node {
               id
               name
+              url
             }
           }
         }
