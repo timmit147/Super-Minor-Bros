@@ -144,7 +144,8 @@ loadBuffers(
   });
   document.addEventListener("keyup", event => {
     if (event.code === "ArrowLeft") {
-        mario.classList.remove('walk-left')
+        mario.classList.remove('walk-left', 'users')
+        usersContainer.classList.add('users')
       console.log('key addvent: left')
     } 
   });
@@ -158,10 +159,11 @@ loadBuffers(
     document.addEventListener("keyup", event => {
         if (event.code === "ArrowRight") {
             mario.classList.remove('walk-right')
+            usersContainer.classList.add('users')
             console.log('key addvent: right')
           } 
         });
-// 
+// Jumpen en in pijpje 
   document.addEventListener("keydown", event => {
     if (event.code === "Space") {
       console.log('key addvent: space')
