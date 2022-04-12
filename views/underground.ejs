@@ -12,7 +12,7 @@
     <div id='head'></div>
     <div class="flex-container">
         <% for (key in repositories) { %>
-            <div><a href="<%- repositories[key].node.url %>"><p><%- repositories[key].node.name %></p></a></div>
+            <div><a target=_blank href="<%- repositories[key].node.url %>"><p><%- repositories[key].node.name %></p></a></div>
         <% } %>
         
     </div>  
