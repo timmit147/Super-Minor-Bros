@@ -259,6 +259,7 @@ button {
   position: absolute;
   transform: translateX(-50%);
   width: 2em;
+  pointer-events: none;
 }
 
 .mario.idle {
