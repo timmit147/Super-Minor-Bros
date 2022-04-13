@@ -12,55 +12,14 @@ let int1;
 const pipeHandler = (event) => {
   clearInterval(int1);
 
-  // document.getElementById("headerInfo").style.display = "none";
-
-  // clear old
+  // clear old so you only get one button with repo at a time and it leaves afterwards
   !currentPipe || currentPipe.classList.remove("active");
+  // console.log('removed the button with repos when mario is not standing underneath')
 
   // get index
   const index = parseInt(event.currentTarget.dataset.index);
 
-  // walk
-  const xpos = -100 - index * 150 - 25;
-  const curXpos = -100 - currentIndex * 150 - 25;
-  const distance = curXpos - xpos;
-  const duration = Math.abs(distance) * 2;
-  // console.log(distance);
-  usersContainer.style.transitionDuration = `${duration}ms`;
-  usersContainer.style.transform = `translateX(${xpos}px)`;
-  ground.style.transitionDuration = `${duration}ms`;
-  ground.style.backgroundPosition = `${xpos}px 32px`;
-  grass.style.transitionDuration = `${duration}ms`;
-  grass.style.backgroundPosition = `${xpos}px 0`;
-
-  //
-  // playSfx("jump");
-
-  playSfx("repoVine");
-  
-  // walk style
-  const dir = distance < 0 ? "left" : "right";
-  mario.classList.remove(
-    "idle",
-    "walk-left",
-    "walk-right",
-    "search-left",
-    "search-right",
-    "go-down-pipe"
-    // "jump"
-  );
-  mario.classList.add(`walk-${dir}`);
-  int1 = setTimeout(
-    (dir, target) => {
-      mario.classList.remove(`walk-${dir}`);
-      mario.classList.add(`search-${dir}`);
-      target.classList.add("active");
-      // playSfx("repoVine");
-    },
-    duration,
-    dir,
-    event.currentTarget
-  );
+  walk(index, event)
 
   // store position
   currentIndex = index;
@@ -222,3 +181,51 @@ loadBuffers(
       console.log('key addvent: space')
     } 
   });
+
+
+
+
+
+
+
+
+  function walk(index, event) {
+  // walk
+  const xpos = -100 - index * 150 - 25;
+  const curXpos = -100 - currentIndex * 150 - 25;
+  const distance = curXpos - xpos;
+  const duration = Math.abs(distance) * 2;
+  console.log(distance);
+  usersContainer.style.transitionDuration = `${duration}ms`;
+  usersContainer.style.transform = `translateX(${xpos}px)`;
+  ground.style.transitionDuration = `${duration}ms`;
+  ground.style.backgroundPosition = `${xpos}px 32px`;
+  grass.style.transitionDuration = `${duration}ms`;
+  grass.style.backgroundPosition = `${xpos}px 0`;
+
+  playSfx("repoVine");
+  
+  // walk style so you can see the feet move 
+  const dir = distance < 0 ? "left" : "right";
+  mario.classList.remove(
+    "idle",
+    "walk-left",
+    "walk-right",
+    "search-left",
+    "search-right",
+    "go-down-pipe"
+    // "jump"
+  );
+  mario.classList.add(`walk-${dir}`);
+  int1 = setTimeout(
+    (dir, target) => {
+      mario.classList.remove(`walk-${dir}`);
+      mario.classList.add(`search-${dir}`);
+      target.classList.add("active");
+      // playSfx("repoVine");
+    },
+    duration,
+    dir,
+    event.currentTarget
+  );
+  }
