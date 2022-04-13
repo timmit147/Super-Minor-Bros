@@ -33,7 +33,11 @@ const pipeHandler = (event) => {
   grass.style.transitionDuration = `${duration}ms`;
   grass.style.backgroundPosition = `${xpos}px 0`;
 
+  //
+  // playSfx("jump");
 
+  playSfx("repoVine");
+  
   // walk style
   const dir = distance < 0 ? "left" : "right";
   mario.classList.remove(
@@ -51,7 +55,7 @@ const pipeHandler = (event) => {
       mario.classList.remove(`walk-${dir}`);
       mario.classList.add(`search-${dir}`);
       target.classList.add("active");
-      playSfx("repoVine");
+      // playSfx("repoVine");
     },
     duration,
     dir,
@@ -79,9 +83,9 @@ gitUsers.forEach((event, index) => {
     mario.classList.remove("walk-left")
   }; 
 
-  // l.onmouseenter = function() {
-  //   playSfx("jump");
-  // }
+  l.onmouseenter = function() {
+    playSfx("jump");
+  }
 
   l.onclick = function () {
     mario.classList.add("down-pipe")
@@ -151,12 +155,12 @@ const playSfx = function play(id) {
   source.start();
 };
 
-const loadBuffers = (urls, ids) => {
-  if (typeof urls == "string") urls = [urls];
+const loadBuffers = (files, ids) => {
+  if (typeof files == "string") files = [files];
   if (typeof ids == "string") ids = [ids];
-  urls.forEach((url, index) => {
+  files.forEach((files, index) => {
     window
-      .fetch(url)
+      .fetch(files)
       .then((response) => response.arrayBuffer())
       .then((arrayBuffer) =>
         context.decodeAudioData(
@@ -173,9 +177,12 @@ const loadBuffers = (urls, ids) => {
 loadBuffers(
   [
     // "https://assets.codepen.io/439000/jump.mp3",
-    "https://storage.cloudconvert.com/tasks/89cf04a6-d9c6-40a8-984d-d247fc584d08/jumpsound.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1649867519&Signature=gCt8jUm1X0k%2Fz9Wuqgh0M3Qf6Rg%3D&response-content-disposition=inline%3B%20filename%3D%22jumpsound.mp3%22&response-content-type=audio%2Fmpeg",
-    "https://storage.cloudconvert.com/tasks/eaf1a154-620c-4057-969e-8478ba622e49/repoPopup.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1649785742&Signature=dHTA4y53Ptoxxg%2BfMN3C5ApvNNQ%3D&response-content-disposition=inline%3B%20filename%3D%22repoPopup.mp3%22&response-content-type=audio%2Fmpeg",
-    "https://assets.codepen.io/439000/smb_pipe.mp3"
+    "/images/jumpsound.mp4",
+    // "https://storage.cloudconvert.com/tasks/89cf04a6-d9c6-40a8-984d-d247fc584d08/jumpsound.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1649867519&Signature=gCt8jUm1X0k%2Fz9Wuqgh0M3Qf6Rg%3D&response-content-disposition=inline%3B%20filename%3D%22jumpsound.mp3%22&response-content-type=audio%2Fmpeg",
+    // "https://storage.cloudconvert.com/tasks/eaf1a154-620c-4057-969e-8478ba622e49/repoPopup.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1649785742&Signature=dHTA4y53Ptoxxg%2BfMN3C5ApvNNQ%3D&response-content-disposition=inline%3B%20filename%3D%22repoPopup.mp3%22&response-content-type=audio%2Fmpeg",
+    "/images/repoPopup.mp3",
+    // "https://assets.codepen.io/439000/smb_pipe.mp3"
+    "/images/downPipe.mp4"
   ],
   ["jump", "repoVine", "downInPipe"]
 );
