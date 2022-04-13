@@ -23,9 +23,9 @@ body {
 
 .flex-container {
   display: flex;
-  left: 15%;
+  left: 6%;
   position: absolute;
-  top: 20%;
+  top: 25%;
 }
 
 .flex-container > div {
@@ -39,19 +39,27 @@ body {
   font-family: 'mariofont';
   src: url('/fonts/Super-Mario-World.ttf');
 }
+
 .flex-container p {
   color: wheat;
-  font-size: 5em;
+  font-size: 4em;
   font-family: "mariofont";
-  color: red;
-  
+  height:  100px;
+  max-width: 180px;
+  margin-bottom: auto;
+  overflow: hidden;
+  padding-left: 0px;
+  position: absolute;
+  text-align: center;
+  text-overflow: inherit;
+  top: 20px;
+  white-space: pre-wrap;
+  width: 200px;
+  word-break: break-all;
 }
-
+ 
 .flex-container a {
   text-decoration: none;
-  font-family: "mariofont";
-  text-align: center;
-  align-items: center;
 }
 
 /* Flowerpipe with button */
