@@ -14,13 +14,14 @@
     <div class="flex-container">
         <% for (key in repositories) { %>
             <div><a target=_blank href="<%- repositories[key].node.url %>"><p><%- repositories[key].node.name %></p></a></div>
-        <% } %>
-        
+        <% } %>    
     </div>  
 
     <div id="pipeWithPlant">
+        <!-- <div a href="/index.ejs" id="pipeWithPlant"> -->
         <div class="pixel-size carnivorousPlant"></div>
       <div class="pixel-size pipe"></div>
+      <!-- </a> -->
     </div>
 
     <div id="pipeTop">
