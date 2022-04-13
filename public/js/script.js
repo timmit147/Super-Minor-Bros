@@ -126,12 +126,14 @@ loadBuffers(
 // Left
   document.addEventListener("keydown", event => {
     if (event.code === "ArrowLeft") {
+      walk()
         mario.classList.add('walk-left')
       console.log('key addvent: left')
     } 
   });
   document.addEventListener("keyup", event => {
     if (event.code === "ArrowLeft") {
+      walk()
         mario.classList.remove('walk-left', 'users')
         usersContainer.classList.add('users')
       console.log('key addvent: left')
@@ -140,12 +142,14 @@ loadBuffers(
 // Right
   document.addEventListener("keydown", event => {
     if (event.code === "ArrowRight") {
+        walk()
         mario.classList.add('walk-right')
         console.log('key addvent: right')
       } 
     });
     document.addEventListener("keyup", event => {
         if (event.code === "ArrowRight") {
+          walk()
             mario.classList.remove('walk-right')
             usersContainer.classList.add('users')
             console.log('key addvent: right')
@@ -166,6 +170,9 @@ loadBuffers(
     }
 
   function walk(index, event) {
+    if (!index){
+      index = currentIndex++
+    }
   // walk
   const xpos = -100 - index * 150 - 25;
   const curXpos = -100 - currentIndex * 150 - 25;
@@ -204,4 +211,5 @@ loadBuffers(
     dir,
     event.currentTarget
   );
+
   }
