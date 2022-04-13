@@ -1,4 +1,5 @@
 // data
+// const body = document.getElementsByClassName("container")
 const mario = document.getElementById("mario");
 const ground = document.getElementById("ground");
 const grass = document.getElementById("grass");
@@ -43,6 +44,7 @@ gitUsers.forEach((event, index) => {
   }
 
   l.onclick = function () {
+    // body.classList.add("pixelate-bg");
     mario.classList.add("down-pipe")
     mario.classList.remove("search-right");
     
@@ -66,6 +68,10 @@ gitUsers.forEach((event, index) => {
   usersContainer.appendChild(e);
   e.addEventListener("click", pipeHandler.bind(this));
 });
+
+
+
+
 
 /**
  * sound effects
@@ -123,6 +129,8 @@ loadBuffers(
 );
 
 
+
+
 // Left
   document.addEventListener("keydown", event => {
     if (event.code === "ArrowLeft") {
@@ -163,6 +171,8 @@ loadBuffers(
   });
 
 
+
+  
 
 //  functions called on in the pipeHandler
   function clearOld () {
