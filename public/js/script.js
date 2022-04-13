@@ -13,7 +13,8 @@ const pipeHandler = (event) => {
   clearInterval(int1);
 
   // clear old so you only get one button with repo at a time and it leaves afterwards
-  !currentPipe || currentPipe.classList.remove("active");
+  clearOld()
+
   // console.log('removed the button with repos when mario is not standing underneath')
 
   // get index
@@ -228,4 +229,8 @@ loadBuffers(
     dir,
     event.currentTarget
   );
+  }
+
+  function clearOld () {
+  !currentPipe || currentPipe.classList.remove("active");
   }
