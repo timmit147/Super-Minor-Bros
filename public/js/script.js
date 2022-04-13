@@ -12,14 +12,13 @@ let int1;
 const pipeHandler = (event) => {
   clearInterval(int1);
 
-  // clear old so you only get one button with repo at a time and it leaves afterwards
+  // clear old to you only get one button with repo at a time so it leaves afterwards
   clearOld()
-
-  // console.log('removed the button with repos when mario is not standing underneath')
 
   // get index
   const index = parseInt(event.currentTarget.dataset.index);
 
+  // mario walking
   walk(index, event)
 
   // store position
@@ -34,9 +33,6 @@ gitUsers.forEach((event, index) => {
   e.classList.add("pipe");
   l.innerHTML = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
 
-  // l.onclick = function () {
-  //   window.location.href = "/underground/" + gitUsers[index].node.owner.login;
-  // };
   l.onmouseover = function(){
     mario.classList.add("jump")
     mario.classList.remove("search-right")
@@ -52,30 +48,17 @@ gitUsers.forEach((event, index) => {
     mario.classList.remove("search-right");
     
     playSfx("downInPipe");
-    // mario.classList.add("go-down-pipe")
+
     window.setTimeout(function delayUnderground() {
       window.location.href = "/underground/" + gitUsers[index].node.owner.login;
   }, 1000);
-    // mario.classList.add("jump");
+
   };
 
   l.onmouseout = function() {
     mario.classList.remove("jump")
     mario.classList.remove("down-pipe")
   };
-
-  // l.onclick = function () {
-  //   // mario.classList.add("jump");
-  //   // mario.classList.remove(`search-${dir}`);
-  //   window.location.href = "/underground/" + gitUsers[index].node.owner.login
-  //   // playSfx("downInPipe");
-  // };
-
-  
-
-//   l.onclick = window.setTimeout(function delayUnderground() {
-//     window.location.href = "/underground/" + gitUsers[index].node.owner.login;
-// }, 10000);
 
   e.dataset.index = index;
   e.dataset.repocount = "Repositories:" + gitUsers[index].node.owner.repositories.totalCount;
@@ -84,13 +67,6 @@ gitUsers.forEach((event, index) => {
   usersContainer.appendChild(e);
   e.addEventListener("click", pipeHandler.bind(this));
 });
-
-
-// console.log(gitUsers);
-// for (key of gitUsers) {
-//     console.log(gitUsers[key]);
-//     // console.log(gitUsers[key].node.owner.login);
-//   }
 
 /**
  * sound effects
