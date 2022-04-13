@@ -1,5 +1,4 @@
 // data
-//
 const mario = document.getElementById("mario");
 const ground = document.getElementById("ground");
 const grass = document.getElementById("grass");
@@ -161,10 +160,10 @@ loadBuffers(
 
 
 
-
-
-
-
+//  functions called on in the pipeHandler
+  function clearOld () {
+    !currentPipe || currentPipe.classList.remove("active");
+    }
 
   function walk(index, event) {
   // walk
@@ -205,8 +204,4 @@ loadBuffers(
     dir,
     event.currentTarget
   );
-  }
-
-  function clearOld () {
-  !currentPipe || currentPipe.classList.remove("active");
   }
