@@ -15,7 +15,7 @@ module.exports = express
       }
       repositoryOwner(login: "${req.params.id}") {
         id
-        repositories(first: 100) {
+        repositories(orderBy: { field: UPDATED_AT, direction: DESC }, first: 100 ) {
           edges {
             node {
               id
