@@ -35,19 +35,33 @@ body {
   width: 10px;
 }
 
+@font-face {
+  font-family: 'mariofont';
+  src: url('/fonts/Super-Mario-World.ttf');
+}
 .flex-container p {
   color: wheat;
-  font-size: 15em;
+  font-size: 5em;
+  font-family: "mariofont";
+  color: red;
+  
+}
+
+.flex-container a {
+  text-decoration: none;
+  font-family: "mariofont";
+  text-align: center;
+  align-items: center;
 }
 
 /* Flowerpipe with button */
 
 .buttonPipe {
-  height: 50px;
+  height: 70px;
   left: 85%;
   position: fixed;
   top: 85%;
-  width: 50px;
+  width: 55px;
 }
 
 .pixel-size {
