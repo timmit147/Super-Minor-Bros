@@ -2,11 +2,14 @@
 In deze module van de minor Web Design & Development wordt er vier dagen gewerkt met de GitHub GraphQL API. De invulling hiervan is op eigen creatieve manier waardoor er de mogelijkheid is om GraphQL te leren verkennen.
 
 ### Voorkant
+homepagina <br/>
+<img width="810" alt="home" src="https://user-images.githubusercontent.com/99180082/163374083-d34a0676-bc81-4d86-a007-317489a3f242.png">
 
-
+detailpagina <br/>
+<img width="810" alt="detail" src="https://user-images.githubusercontent.com/99180082/163374320-3e31e869-e466-4954-8526-a61e150bb25c.png">
 
 ### Link naar live demo
-[Klik hier!](https://super-minor-bros.herokuapp.com/){:target="_blank"}
+<a href="https://super-minor-bros.herokuapp.com/" target="_blank">Klik hier!</a>
 
 ### Inhoudsopgave 
 
