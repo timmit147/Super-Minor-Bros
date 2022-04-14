@@ -4,7 +4,7 @@ const mario = document.getElementById("mario");
 const ground = document.getElementById("ground");
 const grass = document.getElementById("grass");
 const usersContainer = document.getElementById("users");
-let currentIndex = -1;
+let currentIndex = 0;
 let currentPipe;
 let int1;
 
