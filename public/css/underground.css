@@ -7,9 +7,9 @@ body {
 }
 
 /* Wall header */
-
+ 
 #head {
-  transition: 1s;
+  transition: background 1s;
   background-image:url('/images/block.png');
   background-repeat: repeat;
   background-size: 40px;
@@ -28,7 +28,7 @@ body {
   left: 140px;
   position: absolute;
   top: 25%;
-  transition: 1s;
+  transition: margin-left 1s;
 }
 
 .flex-container > div {
@@ -69,7 +69,7 @@ body {
 
 .buttonPipe {
   height: 70px;
-  left: 90%;
+  right: 0%;
   position: fixed;
   top: 83%;
   width: 55px;
@@ -117,7 +117,7 @@ body {
 /* Upside-down-pipe */
 
 #pipeTop {
-  transition: 1s;
+  transition: margin-left 1s;
   left: 25em;
   position: absolute;
   top: 20%;
@@ -158,7 +158,7 @@ body {
 /* wall footer */
 
 #footer { 
-  transition: 1s;
+  transition: background 1s;
   background-image:url('/images/block.png');
   background-repeat: repeat;
   background-size: 40px;
