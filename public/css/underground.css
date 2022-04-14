@@ -69,11 +69,12 @@ body {
 
 .buttonPipe {
   height: 70px;
-  left: 85%;
+  left: 90%;
   position: fixed;
-  top: 85%;
+  top: 83%;
   width: 55px;
   cursor: pointer;
+  transform: rotate(270deg);
 }
 
 .pixel-size {
@@ -127,6 +128,7 @@ body {
 /* Mario */
 
 #mario {
+  transition: 1s;
   align-items: flex-start;
   /* animation: from-pipe 1s alternate;
   animation-fill-mode: forwards; */
