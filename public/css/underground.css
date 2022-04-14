@@ -128,7 +128,7 @@ body {
 /* Mario */
 
 #mario {
-  transition: 1s;
+  transition: margin 1s;
   align-items: flex-start;
   /* animation: from-pipe 1s alternate;
   animation-fill-mode: forwards; */
