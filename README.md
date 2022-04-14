@@ -9,7 +9,7 @@ detailpagina <br/>
 <img width="810" alt="detail" src="https://user-images.githubusercontent.com/99180082/163374320-3e31e869-e466-4954-8526-a61e150bb25c.png">
 
 ### Link naar live demo
-<a href="https://super-minor-bros.herokuapp.com/" target="_blank">Klik hier!</a>
+%md <a href="https://super-minor-bros.herokuapp.com/" target="_blank">Klik hier!</a>
 
 ### Inhoudsopgave 
 
