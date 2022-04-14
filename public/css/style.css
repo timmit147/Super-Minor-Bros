@@ -41,17 +41,16 @@ header {
 }
 
 /* h1,h2 if we do want more text */
-h1 {
-  font-family: "mariofont";
-  text-align: center;
-}
+
 
 h1 {
-  font-size: 4em;
+  font-family: "mariofont";
+  font-size: 3.7em;
   margin-bottom: 1.25em;
   margin-top: -0.5em;
   text-shadow: 0px 1px #e52521, 1px 2px #e52521, 2px 3px #e52521, 3px 4px #e52521, 4px 5px #e52521, 8px 9px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* h2 {
