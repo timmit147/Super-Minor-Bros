@@ -26,7 +26,7 @@ body {
 .flex-container {
   display: flex;
   left: 140px;
-  position: fixed;
+  position: absolute;
   top: 25%;
   transition: 1s;
 }
@@ -68,19 +68,12 @@ body {
 /* Flowerpipe with button */
 
 .buttonPipe {
-  left: 92%;
+  height: 70px;
+  left: 85%;
   position: fixed;
-  top: 92%;
-  transform: rotate(270deg);
-  font-size: 5px;
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
+  top: 85%;
+  width: 55px;
+  cursor: pointer;
 }
 
 .pixel-size {
