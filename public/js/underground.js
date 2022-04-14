@@ -40,9 +40,11 @@ document.addEventListener("keydown", event => {
 
 const buttonPipe = document.querySelector(".buttonPipe")
 buttonPipe.addEventListener("click", function() {
-    playSfx("downInPipe")
-
-    window.setTimeout(function(){window.location.href = "/"} , 10);  
+    document.querySelector("#mario").className = '';
+    document.querySelector("#mario").classList.add("walk-right");
+    document.querySelector("#mario").style.marginLeft = `500px`;
+    window.setTimeout(function(){playSfx("downInPipe")} , 500);  
+    window.setTimeout(function(){window.location.href = "/"} , 550);  
   });
 
 
