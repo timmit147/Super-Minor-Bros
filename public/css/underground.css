@@ -58,7 +58,7 @@ body {
   word-break: break-all;
 }
  
-.flex-container a {
+.flex-container .buttonPipe {
   text-decoration: none;
 }
 
@@ -70,6 +70,7 @@ body {
   position: fixed;
   top: 85%;
   width: 55px;
+  cursor: pointer;
 }
 
 .pixel-size {
