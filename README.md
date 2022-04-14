@@ -12,7 +12,6 @@ In deze module van de minor Web Design & Development wordt er vier dagen gewerkt
 
 * [Beschrijving](https://github.com/timmit147/Super-Minor-Bros#beschrijving)
 * [Installeren](https://github.com/timmit147/Super-Minor-Bros#installeren)
-* [Bronnen](https://github.com/timmit147/Super-Minor-Bros#bronnen)
 * [Licentie](https://github.com/timmit147/Super-Minor-Bros#licentie)
 
 ### Beschrijving
